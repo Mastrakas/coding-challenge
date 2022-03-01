@@ -1,0 +1,8 @@
+@font-face{
+    font-family: 'kungfont';
+    src: url('../Font/Kungfont-Regular.otf') format('opentype');
+}
+
+p{
+    font-family: 'kungfont';
+}
