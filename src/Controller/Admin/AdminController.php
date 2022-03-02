@@ -13,16 +13,16 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class AdminController extends AbstractController{
 
     /**
-     * @Route("/admin/home", name="admin_home")
+     * @Route("choice", name="choice")
      */
 
-     public function adminHome (TechRepository $techRepository){
+     public function choice (TechRepository $techRepository){
 
         $tech1 = $techRepository->findAll();
 
         $tech2 = $techRepository->findAll();
 
-        return $this->render('adminhome.html.twig',
+        return $this->render('choice.html.twig',
         [
             'tech1'=>$tech1,
             'tech2'=>$tech2
