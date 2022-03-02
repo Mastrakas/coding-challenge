@@ -18,13 +18,11 @@ class AdminController extends AbstractController{
 
      public function choice (TechRepository $techRepository, Request $request){
 
-        $tech1 = $techRepository->findAll();
-        $tech2 = $techRepository->findAll();
+        $tech = $techRepository->findAll();
 
         return $this->render('choice.html.twig',
         [
-            'tech1'=>$tech1,
-            'tech2'=>$tech2,
+            'tech'=>$tech,
         ]);
      }
 
@@ -36,15 +34,19 @@ class AdminController extends AbstractController{
         
         $tech1 = $_GET["tech1"];
         $tech2 = $_GET["tech2"];
-        
+        $tech3 = $_GET["tech3"];
+
         $equivalent1 = $techRepository->findBy(
             ['name' => $tech1]
         );
         $equivalent2 = $techRepository->findBy(
             ['name' => $tech2]
         );
+        $equivalent3 = $techRepository->findBy(
+            ['name' => $tech3]
+        );
 
-        $ninjaName = $equivalent1['0']->getNinjaName()." ".$equivalent2['0']->getNinjaName();
+        $ninjaName = $equivalent1['0']->getNinjaName()." ".$equivalent2['0']->getNinjaName()." ".$equivalent3['0']->getNinjaName();
         
         $lines = [];
         $header = [

@@ -7,14 +7,21 @@
             <form action="/coding-challenge/public/myJSON" method="GET">
                 <div class="mb-2">
                 <select name="tech1" id="tech1">
-                    {% for tech in tech1 %}
+                    {% for tech in tech %}
                         <option value="{{ tech.name }}">{{ tech.name }}</option>
                     {% endfor %}
                 </select>
                 </div>
                 <div class="mb-2">
                 <select name="tech2" id="tech2">
-                    {% for tech in tech2 %}
+                    {% for tech in tech %}
+                        <option value="{{ tech.name }}">{{ tech.name }}</option>
+                    {% endfor %}
+                </select>
+                </div>
+                <div class="mb-2">
+                <select name="tech3" id="tech3">
+                    {% for tech in tech %}
                         <option value="{{ tech.name }}">{{ tech.name }}</option>
                     {% endfor %}
                 </select>
