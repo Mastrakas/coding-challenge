@@ -3,9 +3,28 @@
 {%block body %}
     <div class="mainBlock col-12">
         <div class="text-center pt-5">
-            <div class="col-4 offset-4 rounded-pill boiteTextHome">
-                <a href="" class="textHome text-capitalize">Découvre ton nom de ninja! -></a>
-            </div>
+
+            <form action="/coding-challenge/public/myJSON" method="GET">
+                <div class="mb-2">
+                <select name="tech1" id="tech1">
+                    {% for tech in tech1 %}
+                        <option value="{{ tech.name }}">{{ tech.name }}</option>
+                    {% endfor %}
+                </select>
+                </div>
+                <div class="mb-2">
+                <select name="tech2" id="tech2">
+                    {% for tech in tech2 %}
+                        <option value="{{ tech.name }}">{{ tech.name }}</option>
+                    {% endfor %}
+                </select>
+                </div>
+                <div class="button">
+                    <button type="submit" class="boiteTextHome textHome">Découvre ton nom de ninja!</button>
+                </div>
+            </form>
+
+            
         </div>
     </div>
 {% endblock %}
