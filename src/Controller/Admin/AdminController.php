@@ -13,7 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class AdminController extends AbstractController{
 
     /**
-     * @Route("admin/home", name="admin_home")
+     * @Route("/admin/home", name="admin_home")
      */
 
      public function adminHome (TechRepository $techRepository){
